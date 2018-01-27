@@ -73,8 +73,19 @@ if(g)return a.createDocumentFragment();for(var b=b||i(a),c=b.frag.cloneNode(),d=
 </script>
 <![endif]-->
 
-<b:skin>
-
+<b:skin><![CDATA[/*
+-----------------------------------------------
+Blogger Template Style
+Name:   tdSimple
+Author: Lasantha Bandara
+URL 1:  http://www.premiumbloggertemplates.com/
+URL 2:  http://www.bloggertipandtrick.net/
+Theme URL: http://www.premiumbloggertemplates.com/tdsimple-blogger-template/
+Date:   June 2014
+License:  This free Blogger template is licensed under the Creative Commons Attribution 3.0 License, which permits both personal and commercial use.
+However, to satisfy the 'attribution' clause of the license, you are required to keep the footer links intact which provides due credit to its authors. For more specific details about the license, you may visit the URL below:
+http://creativecommons.org/licenses/by/3.0/
+----------------------------------------------- */
 body#layout ul{list-style-type:none;list-style:none}
 body#layout ul li{list-style-type:none;list-style:none}
 body#layout #headerbwrap {height:auto;}
@@ -2124,7 +2135,7 @@ head.appendChild(script);
 <div id='gotoppbt'><h6><i class='fa fa-arrow-up'/></h6></div>
   <span style='color:#333333;'>Nuestras guías de viaje: </span><a href='http://www.antiviaje.com/p/sudafrica-guia-de-viaje.html'>Sudáfrica</a><br/>
 <div class='site-infopbt twelve columns'>
-Copyleft <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script> <a expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+Copyleft <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script> <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> Open Source theme at <a href="https://github.com/rocboronat/antiviaje-blogger-theme">GitHub</a>
 </div><!-- .site-info -->
 </footer><!-- #colophon .site-footerpbt -->
 
