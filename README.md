@@ -6,5 +6,5 @@ It was a conversion from the wordpress theme created by Lasantha Bandara and pub
 
 And now, here's our re-re-re-modified version.
 
-## Whan to use it?
+## Want to use it?
 Noice! But change our Google Maps Static API token, as it's related to us. If won't, we can break your blog just refreshing the token.
