@@ -1,4 +1,4 @@
-# The blogger theme of <a href="antiviaje.com">antiviaje.com</a>
+# The blogger theme of <a href="http://www.antiviaje.com">antiviaje.com</a>
 
 The first version of this blogger theme was downloaded from http://www.premiumbloggertemplates.com/tdsimple-blogger-template
 
