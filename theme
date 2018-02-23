@@ -33,7 +33,7 @@
 <title><data:blog.pageTitle/></title> 
 <b:else/>
 <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
-<title><data:blog.pageName/> ~ <data:blog.title/></title>
+<title><data:blog.pageName/> | <data:blog.title/></title>
 <b:else/>
 <title>404: La página se ha ido de viaje</title>
 </b:if>
@@ -913,7 +913,7 @@ function createSummaryAndThumb(pID){
 <b:section class='nbttopmenutop' id='nbttopmenutop' maxwidgets='1' showaddelement='no'>
   <b:widget id='PageList8' locked='false' title='Pages - Menu' type='PageList' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='pageListJson'><![CDATA[{'home': {'href': 'http://www.antiviaje.com/', 'title': 'Blog', 'position': 0}, '5796484466886118982': {'href': 'http://www.antiviaje.com/p/ab.html', 'title': 'Nosotros', 'position': 1}, '7961131387646417335': {'href': 'http://www.antiviaje.com/p/la-ruta.html', 'title': 'La ruta', 'position': 2}, '9005177165908310289': {'href': 'http://www.antiviaje.com/p/guias-de-viaje.html', 'title': 'Guías', 'position': 3}, '2806864218635780311': {'href': 'http://www.antiviaje.com/p/siguenos.html', 'title': 'Síguenos', 'position': 4}}]]></b:widget-setting>
+      <b:widget-setting name='pageListJson'><![CDATA[{'home': {'href': 'http://www.antiviaje.com/', 'title': 'Blog', 'position': 0}, '8253679876077121927': {'href': 'http://www.antiviaje.com/p/nosotros.html', 'title': 'Nosotros', 'position': 1}, '7961131387646417335': {'href': 'http://www.antiviaje.com/p/la-ruta.html', 'title': 'La ruta', 'position': 2}, '9005177165908310289': {'href': 'http://www.antiviaje.com/p/guias-de-viaje.html', 'title': 'Guías', 'position': 3}, '2806864218635780311': {'href': 'http://www.antiviaje.com/p/siguenos.html', 'title': 'Síguenos', 'position': 4}}]]></b:widget-setting>
       <b:widget-setting name='homeTitle'>Blog</b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
@@ -2133,9 +2133,9 @@ head.appendChild(script);
 
 <footer class='site-footerpbt row' id='colophonpbt' role='contentinfo'>
 <div id='gotoppbt'><h6><i class='fa fa-arrow-up'/></h6></div>
-  <span style='color:#333333;'>Nuestras guías de viaje: </span><a href='http://www.antiviaje.com/p/sudafrica-guia-de-viaje.html'>Sudáfrica</a><br/>
+  <span style='color:#333333;'>Nuestras guías de viaje: </span><a href='http://www.antiviaje.com/p/malawi-guia-de-viaje.html'>Malawi</a>, <a href='http://www.antiviaje.com/p/sudafrica-guia-de-viaje.html'>Sudáfrica</a><br/>
 <div class='site-infopbt twelve columns'>
-Copyleft <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script> <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> Open Source theme at <a href="https://github.com/rocboronat/antiviaje-blogger-theme">GitHub</a>
+Copyleft <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script> <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> Open Source theme at <a href='https://github.com/rocboronat/antiviaje-blogger-theme'>GitHub</a>
 </div><!-- .site-info -->
 </footer><!-- #colophon .site-footerpbt -->
 
@@ -2343,7 +2343,7 @@ window.Modernizr=function(e,t,n){function r(e){d.cssText=e}function i(e,t){retur
     div.className = 'fit-vids-style';
     div.innerHTML = '&shy;<style>         \
       .fluid-width-video-wrapper {        \
-         width: 100%;                     \
+         width: 100%;                      \
          position: relative;              \
          padding: 0;                      \
       }                                   \
@@ -2354,8 +2354,8 @@ window.Modernizr=function(e,t,n){function r(e){d.cssText=e}function i(e,t){retur
          position: absolute;              \
          top: 0;                          \
          left: 0;                         \
-         width: 100%;                     \
-         height: 100%;                    \
+         width: 100%;                      \
+         height: 100%;                     \
       }                                   \
     </style>';
 
