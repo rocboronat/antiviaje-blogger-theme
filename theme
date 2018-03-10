@@ -543,13 +543,13 @@ object {
 /* =Widgets
 ----------------------------------------------- */
 .sidebar-buttonpbt {
-	padding: 0px;
+	padding: 20px;
 	position: fixed;
 	top: 0;
 	right: 0;
-	color: rgba(0,0,0,0);
+	color: #666666;
 	cursor: pointer;
-	z-index: -101;
+	z-index: 101;
 }
 
 .widget-areapbt {
@@ -1959,18 +1959,24 @@ head.appendChild(script);
 <div class='widget-innerpbt' id='sidebar-contentpbt'>
 
 <div class='widget widget_search'>
-<h2 class='widget-title'>Search</h2>
+<h2 class='widget-title'>Busca en el blog</h2>
 <form expr:action='data:blog.homepageUrl + &quot;search/&quot;' id='searchform' method='get' role='search'>
 	<label class='assistive-text' for='s'>Search</label>
-	<input class='field' id='s' name='q' placeholder='Search' type='text' value=''/>
+	<input class='field' id='s' name='q' placeholder='Escribe algo que quieras encontrar' type='text' value=''/>
 	<input class='submit' id='searchsubmit' name='submit' type='submit' value='Search'/>
 </form>
 </div>
 
 <b:section class='footersec' id='footersec1' showaddelement='yes'>
-  <b:widget id='HTML1' locked='false' title='Instagram' type='HTML'>
+  <b:widget id='HTML1' locked='false' title='Guías de viaje' type='HTML'>
     <b:widget-settings>
-      <b:widget-setting name='content'><![CDATA[<script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/d1ad422e311b505d8094b72b71d55e03.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>]]></b:widget-setting>
+      <b:widget-setting name='content'>&lt;ul class=&quot;widget-content list-label-widget-content&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.antiviaje.com/p/consejos-para-salir-de-casa.html&quot;&gt;Consejos para salir de casa&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.antiviaje.com/p/las-mochilas.html&quot;&gt;Mochilas para dar la vuelta al mundo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.antiviaje.com/p/sudafrica-guia-de-viaje.html&quot;&gt;La guía de Sudáfrica&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.antiviaje.com/p/malawi-guia-de-viaje.html&quot;&gt;La guía de Malaui&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.antiviaje.com/p/zambia.html&quot;&gt;La guía de Zambia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -1984,13 +1990,13 @@ head.appendChild(script);
   <b:include name='quickedit'/>
 </b:includable>
   </b:widget>
-  <b:widget id='Label1' locked='false' title='Categories' type='Label' version='1'>
+  <b:widget id='Label1' locked='false' title='Posts por país' type='Label' version='1'>
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
       <b:widget-setting name='selectedLabelsList'/>
       <b:widget-setting name='showType'>ALL</b:widget-setting>
-      <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+      <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
   <b:if cond='data:title'>
@@ -2030,9 +2036,9 @@ head.appendChild(script);
   </div>
 </b:includable>
   </b:widget>
-  <b:widget id='BlogArchive1' locked='false' title='Blog Archive' type='BlogArchive' version='1'>
+  <b:widget id='BlogArchive1' locked='false' title='Posts por fecha' type='BlogArchive' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='showStyle'>FLAT</b:widget-setting>
+      <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
       <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
       <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
       <b:widget-setting name='monthPattern'>MMMM yyyy</b:widget-setting>
@@ -2124,6 +2130,46 @@ head.appendChild(script);
  </b:if>
 </b:includable>
   </b:widget>
+  <b:widget id='Stats1' locked='false' title='Contador de visitas' type='Stats'>
+    <b:widget-settings>
+      <b:widget-setting name='showGraphicalCounter'>false</b:widget-setting>
+      <b:widget-setting name='showAnimatedCounter'>false</b:widget-setting>
+      <b:widget-setting name='showSparkline'>true</b:widget-setting>
+      <b:widget-setting name='sparklineStyle'>WHITE_TRANSPARENT</b:widget-setting>
+      <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  <b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
+  <div class='widget-content'>
+    <!-- Content is going to be visible when data will be fetched from server. -->
+    <div expr:id='data:widget.instanceId + &quot;_content&quot;' style='display: none;'>
+      <!-- Counter and image will be injected later via AJAX call. -->
+      <b:if cond='data:showSparkline'>
+        <img alt='Sparkline' expr:id='data:widget.instanceId + &quot;_sparkline&quot;' height='30' width='75'/>
+      </b:if>
+      <span expr:class='&quot;counter-wrapper &quot; + (data:showGraphicalCounter ? &quot;graph-counter-wrapper&quot; : &quot;text-counter-wrapper&quot;)' expr:id='data:widget.instanceId + &quot;_totalCount&quot;'>
+      </span>
+      <b:include name='quickedit'/>
+    </div>
+  </div>
+</b:includable>
+  </b:widget>
+  <b:widget id='Text1' locked='false' title='' type='Text'>
+    <b:widget-settings>
+      <b:widget-setting name='content'><![CDATA[<br /><center>Escrito con mucho amor por Anna y Roc</center>]]></b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+  </b:widget>
 </b:section>
 
 </div>
@@ -2133,10 +2179,10 @@ head.appendChild(script);
 
 <footer class='site-footerpbt row' id='colophonpbt' role='contentinfo'>
 <div id='gotoppbt'><h6><i class='fa fa-arrow-up'/></h6></div>
-  <span style='color:#333333;'>Nuestras guías de viaje: </span><a href='http://www.antiviaje.com/p/malawi-guia-de-viaje.html'>Malawi</a>, <a href='http://www.antiviaje.com/p/sudafrica-guia-de-viaje.html'>Sudáfrica</a>, <a href='http://www.antiviaje.com/p/zambia.html'>Zambia</a><br/>
-<div class='site-infopbt twelve columns'>
-Copyleft <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script> <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> Open Source theme at <a href='https://github.com/rocboronat/antiviaje-blogger-theme'>GitHub</a>
-</div><!-- .site-info -->
+
+<span style='color:#666666;'>Guías de viaje de <a href='http://www.antiviaje.com/p/malawi-guia-de-viaje.html'>Malawi</a>, <a href='http://www.antiviaje.com/p/sudafrica-guia-de-viaje.html'>Sudáfrica</a>, <a href='http://www.antiviaje.com/p/tanzania-guia-de-viaje.html'>Tanzania</a> y <a href='http://www.antiviaje.com/p/zambia.html'>Zambia</a><br/></span>
+  <span style='color:#666666;'>Copyleft</span> <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script> <a expr:href='data:blog.homepageUrl'><data:blog.title/></a><br/><span style='color:#666666;'>Open Source</span> Blogger theme at <a href='https://github.com/rocboronat/antiviaje-blogger-theme'>GitHub</a>
+
 </footer><!-- #colophon .site-footerpbt -->
 
 </div><!-- #page .hfeed .site -->
