@@ -338,6 +338,16 @@ input[type="submit"]:hover {
 	background: none;
 }
 
+.widget-content li {
+    margin-bottom: 12px;
+}
+#Stats1_totalCount {
+    width: 100%;
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+}
+
 .main-navigationpbt .nav-barpbt li .sub-menu li.current-menu-item a:hover,
 .main-navigationpbt .nav-barpbt li .children li a,
 .main-navigationpbt .nav-barpbt li .sub-menu li a {
@@ -1612,7 +1622,7 @@ function createSummaryAndThumb(pID){
 
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
 <footer class='entry-meta bottom'>
-<b:if cond='data:post.labels'><span class='cat-linkspbt'>Posted in <b:loop values='data:post.labels' var='label'><a expr:href='data:label.url' rel='tag'><data:label.name/></a><b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if></b:loop></span><span class='sep'> / </span></b:if>
+<b:if cond='data:post.labels'><span class='cat-linkspbt'>Ver más posts sobre <b:loop values='data:post.labels' var='label'><a expr:href='data:label.url' rel='tag'><data:label.name/></a><b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if></b:loop></span></b:if>
 
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
   <span>
@@ -1976,6 +1986,7 @@ head.appendChild(script);
 &lt;li&gt;&lt;a href=&quot;http://www.antiviaje.com/p/sudafrica-guia-de-viaje.html&quot;&gt;La guía de Sudáfrica&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.antiviaje.com/p/malawi-guia-de-viaje.html&quot;&gt;La guía de Malaui&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.antiviaje.com/p/zambia.html&quot;&gt;La guía de Zambia&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.antiviaje.com/p/tanzania-guia-de-viaje.html&quot;&gt;La guía de Tanzania&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
@@ -2134,7 +2145,7 @@ head.appendChild(script);
     <b:widget-settings>
       <b:widget-setting name='showGraphicalCounter'>false</b:widget-setting>
       <b:widget-setting name='showAnimatedCounter'>false</b:widget-setting>
-      <b:widget-setting name='showSparkline'>true</b:widget-setting>
+      <b:widget-setting name='showSparkline'>false</b:widget-setting>
       <b:widget-setting name='sparklineStyle'>WHITE_TRANSPARENT</b:widget-setting>
       <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
     </b:widget-settings>
@@ -2156,7 +2167,7 @@ head.appendChild(script);
   </b:widget>
   <b:widget id='Text1' locked='false' title='' type='Text'>
     <b:widget-settings>
-      <b:widget-setting name='content'><![CDATA[<br /><center>Escrito con mucho amor por Anna y Roc</center>]]></b:widget-setting>
+      <b:widget-setting name='content'><![CDATA[<br /><center>Escrito con mucho amor por Anna y Roc<br/>❤️</center>]]></b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -2512,8 +2523,8 @@ jQuery(document).ready(function(){
 		} else {
 			var currentBrowserWidth = jQuery( window ).width();
 			
-			if( currentBrowserWidth > 420 ) {
-				sidebarWidth = '420px';
+			if( currentBrowserWidth > 360 ) {
+				sidebarWidth = '360px';
 			} else {
 				sidebarWidth = currentBrowserWidth.toString() + 'px';
 			}
