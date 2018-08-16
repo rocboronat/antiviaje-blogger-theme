@@ -360,7 +360,7 @@ input[type="submit"]:hover {
 }
 
 .widget-content li {
-    margin-bottom: 12px;
+    margin-bottom: 5px;
 }
 
 .nav-barpbt li {
@@ -1704,8 +1704,8 @@ function createSummaryAndThumb(pID){
     <div class='status-msg-body'>
       <data:navMessage/>
     </div>
-    <div class='status-msg-border'>
-      <div class='status-msg-bg'>
+    <div class='status-msg-border-DISABLED-BY-ROC'>
+      <div class='status-msg-bg-DISABLED-BY-ROC'>
         <div class='status-msg-hidden'><data:navMessage/></div>
       </div>
     </div>
@@ -2006,34 +2006,6 @@ head.appendChild(script);
 </div>
 
 <b:section class='footersec' id='footersec1' showaddelement='yes'>
-  <b:widget id='HTML1' locked='false' title='Guías de viaje' type='HTML'>
-    <b:widget-settings>
-      <b:widget-setting name='content'>&lt;ul class=&quot;widget-content list-label-widget-content&quot;&gt;
-&lt;li&gt;&lt;a href=&quot;/p/consejos-para-salir-de-casa.html&quot;&gt;Consejos para salir de casa&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/p/las-mochilas.html&quot;&gt;Mochilas de mochilero&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/p/transportes-del-mundo.html&quot;&gt;Transportes del  mundo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/p/sudafrica-guia-de-viaje.html&quot;&gt;La guía de Sudáfrica&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/p/malawi-guia-de-viaje.html&quot;&gt;La guía de Malaui&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/p/zambia.html&quot;&gt;La guía de Zambia&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/p/tanzania-guia-de-viaje.html&quot;&gt;La guía de Tanzania&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/p/kenia-guia-de-viaje.html&quot;&gt;La guía de Kenia&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/p/etiopia-guia-de-viaje.html&quot;&gt;La guía de Etiopía&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/p/dubai-guia-de-viaje.html&quot;&gt;La guía de Emiratos Árabes Unidos&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/p/oman-guia-de-viaje.html&quot;&gt;La guía de Omán&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</b:widget-setting>
-    </b:widget-settings>
-    <b:includable id='main'>
-  <!-- only display title if it's non-empty -->
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-    <data:content/>
-  </div>
-
-  <b:include name='quickedit'/>
-</b:includable>
-  </b:widget>
   <b:widget id='Label1' locked='false' title='Posts por país' type='Label' version='1'>
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
