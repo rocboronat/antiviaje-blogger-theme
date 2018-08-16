@@ -113,8 +113,29 @@ body {
 	font-family: 'Lato', serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+    font-size: 32px;
 	font-weight: 700;
+}
+
+h2 {
+    font-size: 28px;
+	font-weight: 700;
+}
+
+h3 {
+    font-size: 24px;
+	font-weight: 700;
+}
+
+h4 {
+    font-size: 20px;
+	font-weight: 700;
+}
+
+h5 {
+    font-size: 19px;
+	font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6, .entry-title a,
@@ -232,7 +253,7 @@ input[type="submit"]:hover {
 #gotoppbt h6 {
 	margin: 0;
 	padding: 13px 23px;
-	color: #333333;
+	color: #666666;
 }
 
 @media (max-width: 979px) { 
@@ -558,13 +579,13 @@ object {
 /* =Widgets
 ----------------------------------------------- */
 .sidebar-buttonpbt {
-	padding: 20px;
+	padding: 20px 20px 2px 20px;
 	position: fixed;
 	top: 0;
 	right: 0;
 	color: #666666;
 	cursor: pointer;
-	z-index: 101;
+	z-index: 90;
 }
 
 .widget-areapbt {
@@ -575,7 +596,7 @@ object {
 	right: -20px;
 	padding-right: 20px;
 	overflow:auto;
-	z-index: 100;
+	z-index: 80;
 }
 
 .widget-innerpbt {
@@ -839,6 +860,7 @@ function createSummaryAndThumb(pID){
 	var summ = summary_noimg;
 	if(img.length>=1) {	
 		imgtag = '<img src="'+img[0].src+'" class="pbtthumbimg" width="320px"/>';
+		imgtag = imgtag.replace('s400', 's800');
 		summ = summary_img;
 	}
 	
@@ -890,7 +912,7 @@ function createSummaryAndThumb(pID){
         <div class='titlewrapper' style='background: transparent'>
           <h1 class='site-title' style='background: transparent; border-width: 0px'>
             <!--<b:include name='title'/>-->
-            <a href='http://www.antiviaje.com/'>
+            <a href='https://www.antiviaje.com/'>
               AN<span style='letter-spacing: -0.5px'>T</span>I-VIA<span style='letter-spacing: -2px'>J</span>E</a>
           </h1>
         </div>
@@ -903,7 +925,7 @@ function createSummaryAndThumb(pID){
       <div class='titlewrapper'>
         <h1 class='site-title'>
             <!--<b:include name='title'/>-->
-            <a href='http://www.antiviaje.com/'>
+            <a href='https://www.antiviaje.com/'>
               AN<span style='letter-spacing: -0.5px'>T</span>I-VIA<span style='letter-spacing: -2px'>J</span>E</a>
         </h1>
       </div>
@@ -928,7 +950,7 @@ function createSummaryAndThumb(pID){
 <b:section class='nbttopmenutop' id='nbttopmenutop' maxwidgets='1' showaddelement='no'>
   <b:widget id='PageList8' locked='false' title='Pages - Menu' type='PageList' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='pageListJson'><![CDATA[{'home': {'href': 'http://www.antiviaje.com/', 'title': 'Blog', 'position': 0}, 'link0': {'href': 'http://guias.antiviaje.com', 'title': 'Guías', 'position': 1}, 'link1': {'href': 'http://www.antiviaje.com/p/rutas-de-viaje.html', 'title': 'Rutas', 'position': 2}, 'link2': {'href': 'http://www.antiviaje.com/p/diario.html', 'title': 'Diario', 'position': 3}, 'link3': {'href': 'http://nosotros.antiviaje.com', 'title': 'Nosotros', 'position': 4}}]]></b:widget-setting>
+      <b:widget-setting name='pageListJson'><![CDATA[{'home': {'href': 'https://www.antiviaje.com/', 'title': 'Blog', 'position': 0}, 'link0': {'href': 'https://www.antiviaje.com/p/paises-por-los-que-hemos-pasado.html', 'title': 'Países', 'position': 1}, 'link1': {'href': 'https://www.antiviaje.com/p/diario.html', 'title': 'Diario', 'position': 2}, 'link2': {'href': 'https://www.antiviaje.com/p/nosotros.html', 'title': 'Nosotros', 'position': 3}}]]></b:widget-setting>
       <b:widget-setting name='homeTitle'>Blog</b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
@@ -1628,10 +1650,9 @@ function createSummaryAndThumb(pID){
 
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
 <footer class='entry-meta bottom'>
-<b:if cond='data:post.labels'><span class='cat-linkspbt'>Ver más posts sobre <b:loop values='data:post.labels' var='label'><a expr:href='data:label.url' rel='tag'><data:label.name/></a><b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if></b:loop></span></b:if>
+<b:if cond='data:post.labels'><span class='cat-linkspbt'>Ver más posts sobre <b:loop values='data:post.labels' var='label'><a expr:href='data:label.url' rel='tag'><data:label.name/></a><b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if></b:loop></span><span class='sep'> / </span></b:if>
 
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
-  <span class='sep'> / </span>
   <span>
      <a expr:href='data:post.url'>Seguir leyendo</a>
   </span>
@@ -1988,17 +2009,17 @@ head.appendChild(script);
   <b:widget id='HTML1' locked='false' title='Guías de viaje' type='HTML'>
     <b:widget-settings>
       <b:widget-setting name='content'>&lt;ul class=&quot;widget-content list-label-widget-content&quot;&gt;
-&lt;li&gt;&lt;a href=&quot;consejos-para-salir-de-casa.html&quot;&gt;Consejos para salir de casa&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;las-mochilas.html&quot;&gt;Mochilas de mochilero&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;transportes-del-mundo.html&quot;&gt;Transportes del  mundo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;sudafrica-guia-de-viaje.html&quot;&gt;La guía de Sudáfrica&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;malawi-guia-de-viaje.html&quot;&gt;La guía de Malaui&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;zambia.html&quot;&gt;La guía de Zambia&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;tanzania-guia-de-viaje.html&quot;&gt;La guía de Tanzania&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;kenia-guia-de-viaje.html&quot;&gt;La guía de Kenia&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;etiopia-guia-de-viaje.html&quot;&gt;La guía de Etiopía&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;dubai-guia-de-viaje.html&quot;&gt;La guía de Emiratos Árabes Unidos&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;oman-guia-de-viaje.html&quot;&gt;La guía de Omán&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/p/consejos-para-salir-de-casa.html&quot;&gt;Consejos para salir de casa&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/p/las-mochilas.html&quot;&gt;Mochilas de mochilero&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/p/transportes-del-mundo.html&quot;&gt;Transportes del  mundo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/p/sudafrica-guia-de-viaje.html&quot;&gt;La guía de Sudáfrica&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/p/malawi-guia-de-viaje.html&quot;&gt;La guía de Malaui&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/p/zambia.html&quot;&gt;La guía de Zambia&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/p/tanzania-guia-de-viaje.html&quot;&gt;La guía de Tanzania&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/p/kenia-guia-de-viaje.html&quot;&gt;La guía de Kenia&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/p/etiopia-guia-de-viaje.html&quot;&gt;La guía de Etiopía&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/p/dubai-guia-de-viaje.html&quot;&gt;La guía de Emiratos Árabes Unidos&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/p/oman-guia-de-viaje.html&quot;&gt;La guía de Omán&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
@@ -2203,8 +2224,11 @@ head.appendChild(script);
 <footer class='site-footerpbt row' id='colophonpbt' role='contentinfo'>
 <div id='gotoppbt'><h6><i class='fa fa-arrow-up'/></h6></div>
 
-  <span style='color:#666666;'>Guías de viaje de <a href="etiopia-guia-de-viaje">Etiopía</a>, <a href="dubai-guia-de-viaje">EAU</a>, <a href='kenia-guia-de-viaje.html'>Kenia</a>, <a href='malawi-guia-de-viaje.html'>Malawi</a>, <a href="oman-guia-de-viaje">Omán</a>, <a href='sudafrica-guia-de-viaje.html'>Sudáfrica</a>, <a href='tanzania-guia-de-viaje.html'>Tanzania</a> y <a href='zambia.html'>Zambia</a><br/></span>
-  <span style='color:#666666;'>Copyleft</span> <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script> <a expr:href='data:blog.homepageUrl'><data:blog.title/></a><br/><span style='color:#666666;'>Open Source</span> Blogger theme at <a href='https://github.com/rocboronat/antiviaje-blogger-theme'>GitHub</a>
+	<span style='color:#666666;'>ANTI-VIAJE</span> Anna y Roc están dando la vuelta al mundo<br/>
+
+	<span style='color:#666666;'>Copyleft</span> <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script> <a expr:href='data:blog.homepageUrl'><data:blog.title/></a><br/>
+
+	<span style='color:#666666;'>Open Source</span> Blogger theme at <a href='https://github.com/rocboronat/antiviaje-blogger-theme'>GitHub</a>
 
 </footer><!-- #colophon .site-footerpbt -->
 
