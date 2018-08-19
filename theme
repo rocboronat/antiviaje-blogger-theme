@@ -858,13 +858,13 @@ function removeHtmlTag(strx,chop){
 	return strx+'...'; 
 }
 
-function createSummaryAndThumb(pID){
+function createSummaryAndThumb(pID,url){
 	var div = document.getElementById(pID);
 	var imgtag = "";
 	var img = div.getElementsByTagName("img");
 	var summ = summary_noimg;
 	if(img.length>=1) {	
-		imgtag = '<img src="'+img[0].src+'" class="pbtthumbimg" width="320px"/>';
+		imgtag = '<a href="'+url+'"><img src="'+img[0].src+'" class="pbtthumbimg" width="320px"/></a>';
 		imgtag = imgtag.replace('s400', 's800');
 		summ = summary_img;
 	}
@@ -1618,7 +1618,7 @@ function createSummaryAndThumb(pID){
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
 <div expr:id='&quot;summary&quot; + data:post.id'><data:post.body/></div>
-<script type='text/javascript'>createSummaryAndThumb(&quot;summary<data:post.id/>&quot;);</script>
+<script type='text/javascript'>createSummaryAndThumb(&quot;summary<data:post.id/>&quot;,&quot;<data:post.url/>&quot;);</script>
 </b:if>
 </b:if>
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
