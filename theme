@@ -121,6 +121,7 @@ h1 {
 h2 {
     font-size: 28px;
 	font-weight: 700;
+	margin-bottom: 20px;
 }
 
 h3 {
@@ -141,6 +142,10 @@ h5 {
 h1, h2, h3, h4, h5, h6, .entry-title a,
 .site-contentpbt .site-navigationpbt a {
 	font-family: 'Lato', serif;
+}
+
+.entry-title {
+	margin-bottom: 6px;
 }
 
 a {
@@ -2228,6 +2233,8 @@ jQuery( document ).ready( function( $ ) {
 		} );
 	};
 
+  //Disabled by Roc: we always want the big menu!
+  if (false) {
 	// Check viewport width on first load.
 	if ( $( window ).width() < 600 )
 		$.fn.smallMenu();
@@ -2249,6 +2256,7 @@ jQuery( document ).ready( function( $ ) {
 			}
 		}, 200 );
 	} );
+  }
 } );
 
 //]]>
